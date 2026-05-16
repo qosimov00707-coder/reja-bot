@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: reja-bot-server
+    env: node
+    rootDir: server
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: SERVER_URL
+        sync: false
